@@ -13,15 +13,12 @@ void main(List<String> arguments) {
  list_int  numbers = [34,67,12,45,67,80];
 
 //  bubble sort
-//  bubbleSort(numbers);
-
-//  selection sort
-// selectionSort(numbers);
+//  
 
 // insertion sort
-insertionSort(numbers);
+// insertionSort(numbers);
 
-// quickSort(numbers, 0, numbers.length - 1);
+quickSort(numbers, 0, numbers.length - 1);
 
  print(numbers);
 }
