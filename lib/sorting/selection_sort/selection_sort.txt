@@ -1,0 +1,8 @@
+2. Selection Sort
+Steps:
+
+Start with the first element as the minimum.
+Compare the minimum element with all other elements in the list.
+Once the smallest element is found, swap it with the first unsorted element.
+Move the boundary of the sorted part to the right and repeat the process for the remaining unsorted part of the list.
+Repeat until the list is fully sorted.

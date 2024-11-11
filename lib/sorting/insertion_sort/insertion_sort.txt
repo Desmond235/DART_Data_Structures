@@ -1,0 +1,7 @@
+3. Insertion Sort
+Steps:
+
+Start with the second element in the list.
+Compare it with the elements before it, and insert it into its correct position by shifting the larger elements one position to the right.
+Repeat the process for each subsequent element.
+After processing all elements, the list will be sorted.

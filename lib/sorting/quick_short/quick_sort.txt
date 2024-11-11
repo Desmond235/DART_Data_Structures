@@ -1,0 +1,7 @@
+ Quick Sort
+Steps:
+
+1. Select a "pivot" element from the list.
+2. Partition the list into two sublists: one with elements smaller than the pivot, and one with elements greater than the pivot.
+3. Recursively apply Quick Sort to both sublists.
+4. Combine the sorted sublists with the pivot to form the sorted list.

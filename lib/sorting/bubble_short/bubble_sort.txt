@@ -1,0 +1,10 @@
+1. Bubble Sort
+Steps:
+
+1. Start from the first element of the list.
+2  Compare the current element with the next element.
+3. If the current element is greater than the next element, swap them.
+2. Continue this process for all adjacent pairs.
+5. After each full pass through the list, the largest element will "bubble" to the end.
+6. Repeat the process for the remaining unsorted portion of the list.
+7. Stop when no swaps are made on a pass.
