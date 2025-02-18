@@ -6,3 +6,4 @@ Steps:
 3. Merge two halves into a sorted list by comparing elements from both halves.
 4. Continue merging the sorted sublists until you have the fully sorted list.
 
+
