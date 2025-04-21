@@ -7,7 +7,7 @@ List<String> spinRow() {
   return [for (var _ = 0; _ < 3; _++) symbols[random.nextInt(symbols.length)]];
 }
 
-void printRow(List row) {
+void printRow(String row) {
   print(row);
 }
 
@@ -52,7 +52,7 @@ void main(List<String> args) {
 
     final row = spinRow();
     print('Spinning...');
-    printRow(row);
+    printRow(row.join(" | "));
 
     final payout = getPayout(row, bet);
 
