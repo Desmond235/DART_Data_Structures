@@ -1,45 +1,8 @@
 import 'dart:math';
 import 'dart:io';
-import 'package:data_structures/wordslist.dart';
+import 'package:data_structures/wordslist.dart' show  hangmanArt;
 
-final hangmanArt = {
-  0: [
-    "  ",
-    "  ",
-    "  ",
-  ],
-  1: [
-    " Օ ",
-    "   ",
-    "  ",
-  ],
-  2: [
-    " Օ ",
-    " | ",
-    "   ",
-  ],
-  3: [
-    " Օ ",
-    "/| ",
-    "   ",
-  ],
-  4: [
-    " Օ ",
-    "/|\\ ",
-    "    ",
-  ],
-  5: [
-    " Օ ",
-    "/|\\ ",
-    "/   ",
-  ],
-  6: [
-    " Օ ",
-    "/|\\ ",
-    "/ \\   ",
-  ]
-};
-
+var words = ['cat', 'maize', 'carrot'];
 void displayMan(int wrongGuesses) {
   print('***********');
   for (var line in hangmanArt[wrongGuesses]!) {
@@ -60,14 +23,13 @@ void main(List<String> args) {
   final random = Random();
   var answer = words[random.nextInt(words.length)];
   var hint = List.filled(answer.length, "_");
-  print(hint);
   int wrongGuesses = 0;
   var guessedLetters = <String>{};
   bool isRunning = true;
 
   while (isRunning) {
-    displayHint(hint.join(" "));
     displayMan(wrongGuesses);
+    displayHint(hint.join(" "));
 
     stdout.write('Enter a letter: ');
     String? guess = (stdin.readLineSync()!).toLowerCase();
@@ -77,26 +39,31 @@ void main(List<String> args) {
       continue;
     }
 
-
+    if (guessedLetters.contains(guess)) {
+      print('$guess is already guessed');
+      continue;
+    }
 
     guessedLetters.add(guess);
 
     if (answer.contains(guess)) {
       for (var i = 0; i < answer.length; i++) {
         if (answer[i] == guess) {
-          hint[i] == guess;
+          print('yes');
+          hint[i] = guess; 
+          print(hint);
         }
       }
-    }else{
+    } else {
       wrongGuesses += 1;
     }
 
-    if(hint.contains("_")){
+    if (!hint.contains("_")) {
       displayMan(wrongGuesses);
       displayAnswer(answer);
       print("YOU WIN!");
       isRunning = false;
-    }else if (wrongGuesses > hangmanArt.length -1){
+    } else if (wrongGuesses >= hangmanArt.length - 1) {
       displayMan(wrongGuesses);
       displayAnswer(answer);
       print("YOU LOSE!");

@@ -31,4 +31,42 @@ final words = ['cloud', 'table', 'chair', 'bread', 'fruit', 'dance', 'flute',
          'mirage', 'nostalgia', 'banquet', 'wrinkle', 'goblet', 'topple', 'plummet', 'grumble',
          'cylinder', 'fathom', 'hazard', 'jinx', 'voodoo'];
 
+final hangmanArt = {
+  0: [
+    "  ",
+    "  ",
+    "  ",
+  ],
+  1: [
+    " Օ ",
+    "   ",
+    "  ",
+  ],
+  2: [
+    " Օ ",
+    " | ",
+    "   ",
+  ],
+  3: [
+    " Օ ",
+    "/| ",
+    "   ",
+  ],
+  4: [
+    " Օ ",
+    "/|\\ ",
+    "    ",
+  ],
+  5: [
+    " Օ ",
+    "/|\\ ",
+    "/   ",
+  ],
+  6: [
+    " Օ ",
+    "/|\\ ",
+    "/ \\   ",
+  ]
+};         
+
 
