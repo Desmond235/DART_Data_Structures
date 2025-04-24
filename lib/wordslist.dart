@@ -31,6 +31,33 @@ final words = ['cloud', 'table', 'chair', 'bread', 'fruit', 'dance', 'flute',
          'mirage', 'nostalgia', 'banquet', 'wrinkle', 'goblet', 'topple', 'plummet', 'grumble',
          'cylinder', 'fathom', 'hazard', 'jinx', 'voodoo'];
 
+final wordBank = {
+  'easy': {
+    'animal': ['cat', 'dog', 'goat', 'pig', 'cow', 'sheep', 'duck', 'mouse', 'horse'],
+    'fruit': ['apple', 'plum', 'grape', 'mango', 'lemon', 'melon', 'peach'],
+    'object': ['hat', 'pen', 'book', 'bag', 'ball', 'kite', 'lamp', 'clock', 'toy'],
+    'transport': ['car', 'bus', 'bike', 'van', 'boat'],
+    'weather': ['sun', 'rain', 'fog', 'wind', 'winter', 'autumn', 'spring', 'snow'],
+  },
+  'medium': {
+    'food': ['bread', 'pasta', 'pizza', 'soup', 'butter', 'cheese', 'salad', 'cake'],
+    'household': ['table', 'chair', 'mirror', 'candle', 'blanket', 'pillow', 'basket'],
+    'place': ['school', 'bridge', 'market', 'library', 'island', 'kitchen', 'garage'],
+    'nature': ['forest', 'river', 'mountain', 'garden', 'flower'],
+    'music': ['piano', 'flute', 'guitar', 'drum', 'dance'],
+  },
+  'hard': {
+    'complex': [
+      'awkward', 'schnitzel', 'liaison', 'opaque', 'plaque', 'czar', 'sphinx', 'rhythm',
+      'voodoo', 'gnome', 'queue', 'dilemma', 'macabre', 'fuchsia', 'bizarre', 'haphazard',
+      'zephyr', 'gazebo', 'nostalgia', 'vortex', 'eclipse', 'xylophone'
+    ],
+    'emotions/abstract': ['phantom', 'mirage', 'flabbergast', 'grumble', 'plummet', 'wrinkle'],
+    'action': ['fiddle', 'topple', 'hazard', 'jinx', 'bequeath', 'fathom'],
+  }
+};
+
+
 final hangmanArt = {
   0: [
     "  ",
