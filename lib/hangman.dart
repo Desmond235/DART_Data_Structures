@@ -1,8 +1,7 @@
 import 'dart:math';
 import 'dart:io';
-import 'package:data_structures/wordslist.dart' show  hangmanArt;
+import 'package:data_structures/wordslist.dart' show words, hangmanArt;
 
-var words = ['cat', 'maize', 'carrot'];
 void displayMan(int wrongGuesses) {
   print('***********');
   for (var line in hangmanArt[wrongGuesses]!) {
