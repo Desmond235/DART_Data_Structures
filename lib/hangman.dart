@@ -48,7 +48,6 @@ void main(List<String> args) {
     if (answer.contains(guess)) {
       for (var i = 0; i < answer.length; i++) {
         if (answer[i] == guess) {
-          print('yes');
           hint[i] = guess; 
           print(hint);
         }
