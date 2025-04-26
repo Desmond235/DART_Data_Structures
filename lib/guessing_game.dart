@@ -20,7 +20,7 @@ void main(List<String> args) {
       } else if (guess < answer) {
         print('Answer to low! Try again!');
       } else if (guess > answer) {
-        print('Answer too big! Try again!');
+        print('Answer too BIG! Try again!');
       } else {
         print('CORRECT! The answer was $answer');
         print('Number of guesses: $guesses');
