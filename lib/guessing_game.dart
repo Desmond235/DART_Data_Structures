@@ -15,7 +15,7 @@ void main(List<String> args) {
       guesses += 1;
 
       if (guess < lowestNum || guess > highestNum) {
-        print('That number is out of ragne');
+        print('That number is out of range');
         print('Enter a number between $lowestNum and $highestNum');
       } else if (guess < answer) {
         print('Answer to low! Try again!');
@@ -32,3 +32,4 @@ void main(List<String> args) {
     }
   }
 }
+
