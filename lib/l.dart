@@ -89,6 +89,4 @@ var score = 0;
   
   score = ((score  / questions.length) * 100).toInt();
   print("\n Your score is: $score%");
-
-  
 }
