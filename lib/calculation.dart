@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:data_structures/extension.dart';
+
 const localAmountFor3Min = 10;
 const trunkAmountFor3Min = 20;
 const foreignAmountFor3Min = 30;
@@ -17,34 +19,31 @@ const foreignAddMin = 15;
 ///  finding the product of the difference
 /// and the amount for every additional minute and then adding it to the amount of the
 /// first three minutes.  
-void calculateAmountPayable(double? minute, double amountPayable,
+void calculateAmountPayable(double? minute, double amount_payable,
     String callType, String input, bool isTryAgain) {
   if (minute == 3) {
     if (callType == 'Local') {
-      amountPayable = 10;
+      amount_payable = 10;
     } else if (callType == "Trunk") {
-      amountPayable = 20;
+      amount_payable = 20;
     } else {
-      amountPayable = 30;
+      amount_payable = 30;
     }
   } else {
     if (callType == 'Local') {
-      amountPayable = localAmountFor3Min + (minute! - 3) * localAddMin;
-      isTryAgain = false;
+      amount_payable = localAmountFor3Min + (minute! - 3) * localAddMin;
+      // isTryAgain = false;
     } else if (callType == "Trunk") {
-      amountPayable = trunkAmountFor3Min + (minute! - 3) * trunkAddMin;
-      isTryAgain = false;
+      amount_payable = trunkAmountFor3Min + (minute! - 3) * trunkAddMin;
+      // isTryAgain = false;
     } else if (callType == "Foreign") {
-      amountPayable = foreignAmountFor3Min + (minute! - 3) * foreignAddMin;
-      isTryAgain = false;
-    } else {
-      print('Call Type not supported!!!');
-      isTryAgain = true;
-    }
+      amount_payable = foreignAmountFor3Min + (minute! - 3) * foreignAddMin;
+      // isTryAgain = false;
+    } 
   }
 
   if (isTryAgain == false) {
-    print('The amount payable by $input is $amountPayable');
+    print('The amount payable by $input is $amount_payable');
     exit(0);
   }
 }
@@ -56,8 +55,8 @@ void calculateAmountPayable(double? minute, double amountPayable,
 /// otherwise returns false.
 
 bool isNumber(String name) {
-  bool isNumber = double.tryParse(name) != null;
-  return isNumber;
+  bool _isNumber = double.tryParse(name) != null;
+  return _isNumber;
 }
 
 
@@ -66,9 +65,9 @@ bool isNumber(String name) {
 ///
 /// Otherwise false will be returned.
 bool isAlphabet(double? minute){
-  bool isAlphabet = double.tryParse(minute.toString()) == null;
-  print(isAlphabet);
-  return isAlphabet;
+  bool _isAlphabet = double.tryParse(minute.toString()) == null;
+  print(_isAlphabet);
+  return _isAlphabet;
 }
 
 
@@ -79,7 +78,7 @@ bool isAlphabet(double? minute){
 /// obtained, it calculates the amount payable based on the input call details.
 
 void executeCode(){
-bool isTryAgain = true;
+bool isTryAgain = false;
     stdout.write("Enter name:\t");
     String? name = stdin.readLineSync()!;
 // 
@@ -99,15 +98,19 @@ bool isTryAgain = true;
     }
     stdout.write(
         '\nEnter call type, call type should be (Local, Trunk or Foreign):\t\n');
-    String? callType = stdin.readLineSync()!;
+    String? callType = stdin.readLineSync()!.capitalize();
     var amountPayable = 0.0;
 
-    while (isTryAgain == true) {
+    while (isTryAgain) {
       print('Invalid Call type');
       stdout.write(
         '\nEnter call type, call type should be (Local, Trunk or Foreign):\t\n');
     callType = stdin.readLineSync()!;
-      isTryAgain = false;
+      if (callType == 'Local' || callType == 'Trunk' || callType == 'Foreign') {
+        isTryAgain = false;
+      } else {
+        isTryAgain = true;
+      }
     }
 
     calculateAmountPayable(minute, amountPayable, callType!, name, isTryAgain);
