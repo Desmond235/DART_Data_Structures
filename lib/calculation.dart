@@ -17,25 +17,25 @@ const foreignAddMin = 15;
 ///  finding the product of the difference
 /// and the amount for every additional minute and then adding it to the amount of the
 /// first three minutes.  
-void calculateAmountPayable(double? minute, double amount_payable,
+void calculateAmountPayable(double? minute, double amountPayable,
     String callType, String input, bool isTryAgain) {
   if (minute == 3) {
     if (callType == 'Local') {
-      amount_payable = 10;
+      amountPayable = 10;
     } else if (callType == "Trunk") {
-      amount_payable = 20;
+      amountPayable = 20;
     } else {
-      amount_payable = 30;
+      amountPayable = 30;
     }
   } else {
     if (callType == 'Local') {
-      amount_payable = localAmountFor3Min + (minute! - 3) * localAddMin;
+      amountPayable = localAmountFor3Min + (minute! - 3) * localAddMin;
       isTryAgain = false;
     } else if (callType == "Trunk") {
-      amount_payable = trunkAmountFor3Min + (minute! - 3) * trunkAddMin;
+      amountPayable = trunkAmountFor3Min + (minute! - 3) * trunkAddMin;
       isTryAgain = false;
     } else if (callType == "Foreign") {
-      amount_payable = foreignAmountFor3Min + (minute! - 3) * foreignAddMin;
+      amountPayable = foreignAmountFor3Min + (minute! - 3) * foreignAddMin;
       isTryAgain = false;
     } else {
       print('Call Type not supported!!!');
@@ -44,7 +44,7 @@ void calculateAmountPayable(double? minute, double amount_payable,
   }
 
   if (isTryAgain == false) {
-    print('The amount payable by $input is $amount_payable');
+    print('The amount payable by $input is $amountPayable');
     exit(0);
   }
 }
