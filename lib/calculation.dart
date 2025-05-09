@@ -56,8 +56,8 @@ void calculateAmountPayable(double? minute, double amountPayable,
 /// otherwise returns false.
 
 bool isNumber(String name) {
-  bool _isNumber = double.tryParse(name) != null;
-  return _isNumber;
+  bool isNumber = double.tryParse(name) != null;
+  return isNumber;
 }
 
 
@@ -66,9 +66,9 @@ bool isNumber(String name) {
 ///
 /// Otherwise false will be returned.
 bool isAlphabet(double? minute){
-  bool _isAlphabet = double.tryParse(minute.toString()) == null;
-  print(_isAlphabet);
-  return _isAlphabet;
+  bool isAlphabet = double.tryParse(minute.toString()) == null;
+  print(isAlphabet);
+  return isAlphabet;
 }
 
 
