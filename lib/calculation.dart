@@ -3,13 +3,6 @@ import 'dart:io';
 import 'package:data_structures/extension.dart';
 import 'package:csv/csv.dart' as csv;
 
-const localAmountFor3Min = 10;
-const trunkAmountFor3Min = 20;
-const foreignAmountFor3Min = 30;
-const localAddMin = 5;
-const trunkAddMin = 10;
-const foreignAddMin = 15;
-
 /// This calculates the amount payable .
 ///
 /// There are default amounts if the minute is 3.
@@ -22,6 +15,13 @@ const foreignAddMin = 15;
 /// first three minutes.
 double calculateAmountPayable(int? minute, double amountPayable,
     String callType, String input, bool isTryAgain) {
+      
+  const localAmountFor3Min = 10;
+  const trunkAmountFor3Min = 20;
+  const foreignAmountFor3Min = 30;
+  const localAddMin = 5;
+  const trunkAddMin = 10;
+  const foreignAddMin = 15;
   if (minute == 3) {
     if (callType == 'Local') {
       amountPayable = 10;
