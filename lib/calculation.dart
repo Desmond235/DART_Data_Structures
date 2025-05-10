@@ -15,7 +15,7 @@ import 'package:csv/csv.dart' as csv;
 /// first three minutes.
 double calculateAmountPayable(int? minute, double amountPayable,
     String callType, String input, bool isTryAgain) {
-      
+
   const localAmountFor3Min = 10;
   const trunkAmountFor3Min = 20;
   const foreignAmountFor3Min = 30;
@@ -34,15 +34,12 @@ double calculateAmountPayable(int? minute, double amountPayable,
     if (callType == 'Local') {
       amountPayable =
           localAmountFor3Min + (minute!.toDouble() - 3) * localAddMin;
-      // isTryAgain = false;
     } else if (callType == "Trunk") {
       amountPayable =
           trunkAmountFor3Min + (minute!.toDouble() - 3) * trunkAddMin;
-      // isTryAgain = false;
     } else if (callType == "Foreign") {
       amountPayable =
           foreignAmountFor3Min + (minute!.toDouble() - 3) * foreignAddMin;
-      // isTryAgain = false;
     }
   }
 
