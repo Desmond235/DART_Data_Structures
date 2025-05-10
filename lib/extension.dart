@@ -28,6 +28,10 @@ extension ListExtensions<T> on List<T> {
 }
 
 extension StringExtensions on String{
+  /// Returns a new string with the first character of this string uppercased and
+  /// the remaining characters unchanged.
+  ///
+  /// Example: 'hello'.capitalize() returns 'Hello'.
   String capitalize(){
     return '${this[0].toUpperCase()}${substring(1)}';
   }
