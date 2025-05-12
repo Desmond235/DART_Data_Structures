@@ -65,12 +65,16 @@ void writeCsv() {
   /// The [toList] method is used to wait for the conversion to complete and
   /// return the list of lists.
 void readCsv() async {
-  final input = File(path.join(Directory.current.path, 'data.csv')).openRead();
+  try {
+    final input = File(path.join(Directory.current.path, 'data.sv')).openRead();
   final fields = await input
       .transform(utf8.decoder)
       .transform(csv.CsvToListConverter())
       .toList();
   print(fields);
+  }catch (e) {
+    print(e.toString());
+  }
 }
 
 class Student {
